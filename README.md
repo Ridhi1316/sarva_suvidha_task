@@ -20,24 +20,12 @@ The Backend is built with **FastAPI** and uses **PostgreSQL** as the database.
 
 ---
 
-## 📦 Tech Stack
-
-- **Python 3.11+**
-- **FastAPI** – High-performance web framework
-- **SQLAlchemy** – ORM for database operations
-- **PostgreSQL** – Relational database
-- **Pydantic** – Data validation
-- **Uvicorn** – ASGI web server
-- **python-dotenv** – Manage environment variables
-
----
-
 ## ⚙️ Setup Instructions
 
 ### 🔹 1. Clone the Repository
 
 ```bash
-git clone 
+git clone https://github.com/Ridhi1316/sarva_suvidha_task.git
 cd sarva_assignment_task
 ```
 
