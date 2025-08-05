@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "995411517879",
+    "project_id": "kpa-erp-ridhi-20-19d52",
+    "storage_bucket": "kpa-erp-ridhi-20-19d52.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995411517879:android:a5c441d99d478105320832",
+        "android_client_info": {
+          "package_name": "com.example.kpa_erp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGoVSeh-aDyJkwxmmdZq7AeD-6AR8Dd08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

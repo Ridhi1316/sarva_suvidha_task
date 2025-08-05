@@ -1,0 +1,167 @@
+# 🚆 KPA Form Backend API
+
+This project is a solution to the KPA Backend Assignment. It provides backend APIs to collect and retrieve form data for "Wheel Specification" and "Bogie Checksheet" forms. The backend is built with **FastAPI** and uses **PostgreSQL** as the database.
+
+---
+
+## 📦 Tech Stack
+
+- **Python 3.11+**
+- **FastAPI** – High-performance web framework
+- **SQLAlchemy** – ORM for database operations
+- **PostgreSQL** – Relational database
+- **Pydantic** – Data validation
+- **Uvicorn** – ASGI web server
+- **python-dotenv** – Manage environment variables
+
+---
+
+## ⚙️ Setup Instructions
+
+### 🔹 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/sarvaSuvidhaien.git
+cd 
+```
+
+### 🔹 2. Create a Virtual Environment
+
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+### 🔹 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 🔹 4. Setup PostgreSQL
+
+1. Ensure PostgreSQL is installed and running.
+2. Create a database:
+
+```bash
+sudo -u postgres psql
+CREATE DATABASE kpa_db;
+ALTER USER postgres WITH PASSWORD 'yourpassword';
+\q
+```
+
+### 🔹 5. Configure Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+DATABASE_URL=postgresql://postgres:yourpassword@localhost/kpa_db
+```
+
+> Replace `yourpassword` with your actual PostgreSQL password.
+
+
+### 🔹 6. Run the API Server
+
+```bash
+uvicorn app.main:app --reload
+```
+
+Open Swagger Docs at: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+---
+
+## 📌 Implemented API Endpoints
+
+### ✅ POST `/api/forms/wheel-specifications`
+
+- Accepts a JSON payload of wheel measurements.
+- Saves the data to the database.
+- Returns form metadata and a success message.
+
+### ✅ GET `/api/forms/wheel-specifications`
+
+- Supports filtering via:
+  - `formNumber`
+  - `submittedBy`
+  - `submittedDate`
+- Returns a list of matching form records in the specified structure.
+
+### ✅ POST `/api/forms/bogie-checksheet`
+
+- Accepts a JSON payload of bogie condition and inspection data.
+- Saves the form data to the database.
+- Returns inspection summary and a success message.
+
+---
+
+## 🔍 API Testing
+
+You can test the API using:
+
+- ✅ **Swagger UI** at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+- ✅ **Postman** using the provided Postman collection (`KPA_form data.postman_collection.json`)
+
+---
+
+## 🗂 Directory Structure
+
+```
+sarva_Suvidha_project/
+├── app/
+│   ├── main.py
+│   ├── models/
+│   ├── routers/
+│   ├── schemas/
+│   └── db/
+├── .env
+├── requirements.txt
+├── README.md
+└── KPA_form data.postman_collection.json
+```
+
+---
+
+## ⚠️ Assumptions & Limitations
+
+- No user authentication or file uploads implemented.
+- Date filtering is done via string in `YYYY-MM-DD` format.
+- Responses are strictly based on assignment-provided schemas.
+- PostgreSQL is assumed to be locally hosted on default port `5432`.
+- Input validation is basic; production would require stricter checks.
+
+---
+
+## 🧪 Sample Query Example
+
+```http
+GET /api/forms/wheel-specifications?formNumber=WHEEL-2025-001&submittedBy=user_123
+```
+
+Response:
+```json
+{
+  "success": true,
+  "message": "Filtered wheel specification forms fetched successfully.",
+  "data": [
+    {
+      "formNumber": "WHEEL-2025-001",
+      "submittedBy": "user_123",
+      "submittedDate": "2025-07-03",
+      "fields": {
+        "treadDiameterNew": "915 (900-1000)",
+        "lastShopIssueSize": "837 (800-900)",
+        "condemningDia": "825 (800-900)",
+        "wheelGauge": "1600 (+2,-1)"
+      }
+    }
+  ]
+}
+```
+
+---
+
+
+## 📜 License
+
+This project is for educational/assignment purposes only.
