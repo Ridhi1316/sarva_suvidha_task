@@ -147,27 +147,20 @@ sarva_Suvidha_project/
 ## 🧪 Sample Query Example
 
 ```http
-GET /api/forms/wheel-specifications?formNumber=WHEEL-2025-001&submittedBy=user_123
+POST /api/forms/wheel-specifications
 ```
 
 Response:
 ```json
 {
-  "success": true,
-  "message": "Filtered wheel specification forms fetched successfully.",
-  "data": [
-    {
-      "formNumber": "WHEEL-2025-001",
-      "submittedBy": "user_123",
-      "submittedDate": "2025-07-03",
-      "fields": {
-        "treadDiameterNew": "915 (900-1000)",
-        "lastShopIssueSize": "837 (800-900)",
-        "condemningDia": "825 (800-900)",
-        "wheelGauge": "1600 (+2,-1)"
-      }
+    "success": true,
+    "message": "Wheel specification submitted successfully.",
+    "data": {
+        "formNumber": "WHEEL-2025-100",
+        "submittedBy": "user_id_129",
+        "submittedDate": "2025-08-05",
+        "status": "Saved"
     }
-  ]
 }
 ```
 
@@ -176,4 +169,4 @@ Response:
 
 ## 📜 License
 
-This project is for educational/assignment purposes only.
+This project is for assignment purposes only.
