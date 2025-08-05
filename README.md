@@ -1,6 +1,22 @@
-# 🚆 KPA Form Backend API
+# 🚆 KPA Form
 
-This project is a solution to the KPA Backend Assignment. It provides backend APIs to collect and retrieve form data for "Wheel Specification" form. The backend is built with **FastAPI** and uses **PostgreSQL** as the database.
+This project is a full-stack solution for the KPA Assignment, providing a web-based platform to submit, filter, and retrieve data for the "ICF Wheel Specification" form.
+The Frontend is built using **Flutter** and runs on the web (Chrome).
+The Backend is built with **FastAPI** and uses **PostgreSQL** as the database.
+
+---
+
+## 📦 Tech Stack
+
+- **Flutter** – Cross-platform UI toolkit
+- **Python 3.13**
+- **FastAPI** – High-performance web framework
+- **SQLAlchemy** – ORM for database operations
+- **PostgreSQL** – Relational database
+- **Pydantic** – Data validation and serialization
+- **Uvicorn** – ASGI web server
+- **python-dotenv** – Manage environment variables
+
 
 ---
 
