@@ -1,6 +1,6 @@
 # 🚆 KPA Form Backend API
 
-This project is a solution to the KPA Backend Assignment. It provides backend APIs to collect and retrieve form data for "Wheel Specification" and "Bogie Checksheet" forms. The backend is built with **FastAPI** and uses **PostgreSQL** as the database.
+This project is a solution to the KPA Backend Assignment. It provides backend APIs to collect and retrieve form data for "Wheel Specification" form. The backend is built with **FastAPI** and uses **PostgreSQL** as the database.
 
 ---
 
@@ -21,8 +21,8 @@ This project is a solution to the KPA Backend Assignment. It provides backend AP
 ### 🔹 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/sarvaSuvidhaien.git
-cd 
+git clone 
+cd sarva_assignment_task
 ```
 
 ### 🔹 2. Create a Virtual Environment
@@ -87,12 +87,6 @@ Open Swagger Docs at: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
   - `submittedDate`
 - Returns a list of matching form records in the specified structure.
 
-### ✅ POST `/api/forms/bogie-checksheet`
-
-- Accepts a JSON payload of bogie condition and inspection data.
-- Saves the form data to the database.
-- Returns inspection summary and a success message.
-
 ---
 
 ## 🔍 API Testing
@@ -113,11 +107,14 @@ sarva_Suvidha_project/
 │   ├── models/
 │   ├── routers/
 │   ├── schemas/
-│   └── db/
+│   ├── db.py
+|   └── config.py
 ├── .env
 ├── requirements.txt
 ├── README.md
-└── KPA_form data.postman_collection.json
+├── KPA_form data.postman_collection.json
+└── KPA-ERP-FE-dev_afoz
+
 ```
 
 ---
@@ -128,7 +125,6 @@ sarva_Suvidha_project/
 - Date filtering is done via string in `YYYY-MM-DD` format.
 - Responses are strictly based on assignment-provided schemas.
 - PostgreSQL is assumed to be locally hosted on default port `5432`.
-- Input validation is basic; production would require stricter checks.
 
 ---
 
